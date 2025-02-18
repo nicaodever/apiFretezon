@@ -17,14 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from core.fretezon.viewsets import UserViewSet, FreteViewSet, MotoristaViewSet, VeiculoViewSet, CnhViewSet
+from fretezon import viewsets
 
 router = DefaultRouter()
-router.register(r'users', UserViewSet)
-router.register(r'fretes', FreteViewSet)
-router.register(r'motoristas', MotoristaViewSet)
-router.register(r'veiculos', VeiculoViewSet)
-router.register(r'cnhs', CnhViewSet)
+router.register(r'users', viewsets.UserViewSet)
+router.register(r'fretes', viewsets.FreteViewSet)
+router.register(r'motoristas', viewsets.MotoristaViewSet)
+router.register(r'veiculos', viewsets.VeiculoViewSet)
+router.register(r'cnhs', viewsets.CnhViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
